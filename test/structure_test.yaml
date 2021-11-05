@@ -1,0 +1,31 @@
+---
+schemaVersion: 2.0.0
+
+fileExistenceTests:
+  - name: '/entrypoint.sh exist ...'
+    path: /entrypoint.sh
+    isExecutableBy: 'owner'
+    shouldExist: true
+    uid: 0
+    gid: 0
+
+  - name: '/etc/motd exist ...'
+    path: /etc/motd
+    shouldExist: true
+    uid: 0
+    gid: 0
+
+commandTests:
+  - name: "say hello world with bash"
+    command: "bash"
+    args:
+      - -c
+      - |
+         echo hello &&
+         echo world
+
+metadataTest:
+  cmd: [/entrypoint.sh]
+  labels:
+  - key: 'maintainer'
+    value: 'richard.steinbrueck@googlemail.com'
