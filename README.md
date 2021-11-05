@@ -8,8 +8,7 @@
 
 ## Why
 
-Sometimes in life you need a container in a K8s Cluster or on a Docker machine to theo-client some things.
-In this situation this image helps you alot! 🎉 🙌
+Container to run the theo-cli on Kubernetes cluster.
 
 ### Build locally
 
@@ -20,20 +19,20 @@ make dev-build
 ### Run in docker context
 
 ```sh
-docker run -d --rm -p2222:22 -p8080:80 steinbrueckri/theo-client
+docker run -d --rm -p2222:22 -e THEO_URL="http://xxx" -e THEO_CLIENT_TOKEN="xxx" -e THEO_ADMIN_TOKEN="xxx" steinbrueckri/theo-client
 ```
 
 ### Run in K8s context
 
-TDB
+see [https://github.com/p1nkun1c0rns/charts](https://github.com/p1nkun1c0rns/charts) for installation via Helm.
 
 ## Configuration
 
 ### Environment variables
 
-- `THEO_URL` asdfasdf
-- `THEO_ADMIN_TOKEN` asdfasdf
-- `THEO_CLIENT_TOKEN` asdfasdf
+- `THEO_URL`
+- `THEO_ADMIN_TOKEN`
+- `THEO_CLIENT_TOKEN`
 
 ## Contributions
 
