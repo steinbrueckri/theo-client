@@ -8,7 +8,7 @@
 
 ## Why
 
-Container to run the theo-cli on Kubernetes cluster.
+Container to run the [theo-cli](https://github.com/theoapp/theo-cli) on Kubernetes cluster.
 
 ### Build locally
 
