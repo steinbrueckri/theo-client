@@ -1,0 +1,10 @@
+ca-certificates
+supervisor
+file
+locales
+tree
+vim
+curl
+openssh-server
+wget
+lsb-release
