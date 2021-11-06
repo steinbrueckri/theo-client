@@ -5,25 +5,25 @@ env:
   IMAGE_TAG: ${{ github.sha }}
   IMAGE: ${{ github.repository }}
 jobs:
-  tests:
-    name: Run tests
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
+  # tests:
+  #   name: Run tests
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v2
+  #       with:
+  #         fetch-depth: 0
 
-      - name: Install bats
-        run: sudo apt-get -y install bats > /dev/null
+  #     - name: Install bats
+  #       run: sudo apt-get -y install bats > /dev/null
 
-      - name: Run CI script
-        run: ./test/run.bats
+  #     - name: Run CI script
+  #       run: ./test/run.bats
 
   release:
     name: Create release
-    needs: tests
-    if: github.ref == 'refs/heads/master'
+    # needs: tests
+    # if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -34,7 +34,7 @@ jobs:
         uses: mathieudutour/github-tag-action@v5.6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          default_bump: patch
+          dry_run: true
 
       - name: Tag and push Docker image
         run: |
