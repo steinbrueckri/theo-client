@@ -1,4 +1,4 @@
-FROM debian:unstable-20211115
+FROM debian:unstable-20211201
 ARG THEO_AGENT_VERSION="v0.14.0"
 LABEL maintainer="richard.steinbrueck@googlemail.com"
 
